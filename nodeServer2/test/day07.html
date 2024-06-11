@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+    function ask(question, ys, no){
+	        if (confirm(question)) yes()
+	        else no();
+    }
+
+    ask(
+    "동의하십니까?", //첫 질문
+    function() { alert("동의"); }, //yes
+    function() { alert("취소 버튼"); } //no
+    )
+    </Script>
+
+</head>
+<body>
+    
+</body>
+</html>

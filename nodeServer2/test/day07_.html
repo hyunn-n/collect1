@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        let arr = ['c', 'c++', 'java', 'javascript', 'python'];
+        let user = {
+            id: 'jamsuham',
+            pw: '1234',
+            name: '잠수함',
+            age: 30
+        }; //객체 리터럴
+
+
+        // const arrCopy = arr; // 일반 프로그래밍 방식
+        // console.log('a = ${a}, b=${b}, rest=${rest}');
+        const [a,b, ...rest] = arr;
+        console.log(`a = ${a}, b=${b}, rest=${rest}`);
+
+
+        const {id, pw, name, age} = user;
+        console.log(`ID = ${id}, PW=${pw}, NAME=${name}, AGE=${age}`);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        function Player(){
+            this.x=100;
+            this.y=200;              
+            this.myShape='Player';
+
+            // this.display=function(){}
+            // this.display=function(){
+            //     alert(`x=${this.x}`);
+            // };
+
+        }
+
+        Player.prototype.display=function(){
+            alert(`${this.myShape}:${this.x},${this.y}`);
+        };
+        Player.prototype.moveLeft=function(){
+            this.x = this.x-10;
+            this.display();
+        };
+        Player.prototype.moveRight=function(){
+            this.x = this.x+10;
+            this.display();
+        };
+
+        var pobj = new Player();
+        var pobj2 = new Player();
+
+
+        pobj.display();
+        pobj2.display();
+    
+
+    </Script>
+</head>
+<body>
+    
+</body>
+</html>

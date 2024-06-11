@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    </head>
+
+
+    <body>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <h1>방문록</h1>
+    <!-- <hr> -->
+        <div class="container">
+            <form id = "visit" action="/save" method="post">
+                <div class="form-group">
+                    <label for="title">글제목:</label>
+                    <input type="text" class="form-control" id ="title" placeholder="Enter title" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="email">작성자(이메일)</label>
+                    <input type="email" class="form-control" id ="email" placeholder="Enter email" name = "email">
+                </div>
+                <div class="form-group">
+                    <label for="text">글내용:</label>
+                    <textarea cols="80" class="form-control" id="content" rows="10" name="content" placeholder="Enter content"></textarea>
+                </div>
+    
+        <button type ="button" class="btn btn-primary" onclick="ValidCheck()">글등록</button>
+        <button type="reset" class="btn btn-default">글작성 취소</button>
+
+    </form>
+
+    <script>
+        
+        function ValidCheck(){
+            var title = document.getElementById("title").value;
+            var email = document.getElementById("email").value;
+            var email_regex = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+            var content = document.getElementById("content").value;
+
+            if(title.trim() === "" || content.trim() === "" || email.trim() === ""){
+                alert('잘못된 입력');
+                return;
+            }
+
+            if(email_regex.test(email) === false){
+                alert('잘못된 이메일 입력');
+                return;
+            } 
+
+            alert("성공적으로 글등록");
+            document.getElementById("visit").submit();
+        }
+    </script>
+
+</body>
+</html>

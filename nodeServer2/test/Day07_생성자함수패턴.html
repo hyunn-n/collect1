@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>
+        //객체를 생성: {}, 생성자함수패턴, class
+        function Player(){ //함수 첫 문자 대문자
+            this.x=100;
+            this.y=200;              //생성자함수패턴함수가 일반적 선언적 형식으로 호출이 발생함, 이때 당시의 this는 소속자 주인은? 최상위 객체 window의 것. Local: Window
+            this.myShape='Player';
+
+            // this.display=()=>{}; //화살표 함수; 6 Version
+
+            // this.display=function(){
+            //     alert(`x=${this.x}`);
+            // };
+
+        }
+
+        pobj.display();
+        pobj.moveLeft=function(){
+            this.x = this.x-1;
+            alert(`움직인 좌표: ${this.x}`);
+        }
+        pobj.moveLeft();
+        delete pobj.display;        // 불리면 뒤에서는 불리면 안됨.
+        pobj.display()
+
+        var pobj2 = new Player();     //new 소속을 완전히 바꿔줌.
+        pobj2.display()
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
